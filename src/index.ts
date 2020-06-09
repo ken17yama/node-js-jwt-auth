@@ -2,6 +2,9 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 
+import { authRoute } from './routes/auth.route'
+import { userRoute } from './routes/user.route'
+
 const app = express();
 
 var corsOptions = {
@@ -27,8 +30,8 @@ app.get("/", (req, res) => {
 	res.json({ message: "Welcome to bezkoder application." });
 });
 
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+authRoute(app);
+userRoute(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
