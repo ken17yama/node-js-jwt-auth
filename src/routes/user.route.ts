@@ -1,4 +1,4 @@
-import { authJwt } from "../middlewares";
+import { authJwt } from "../middlewares/authJwt";
 import { allAccess, userBoard, adminBoard, moderatorBoard } from "../controllers/user.controller";
 
 export const userRoute = (app) => {

@@ -1,12 +1,13 @@
-const db = require("../models");
-const config = require("../config/auth.config");
+import { db } from "../models";
+import { config } from "../config/auth.config";
+
 const User = db.user;
 const Role = db.role;
 
 const Op = db.Sequelize.Op;
 
-var jwt = require("jsonwebtoken");
-var bcrypt = require("bcryptjs");
+import * as jwt from "jsonwebtoken";
+import * as bcrypt from "bcryptjs";
 
 export const signup = (req, res) => {
 	// Save User to Database
@@ -38,6 +39,7 @@ export const signup = (req, res) => {
 		})
 		.catch(err => {
 			res.status(500).send({ message: err.message });
+			console.log(err.message)
 		});
 };
 
@@ -85,5 +87,6 @@ export const signin = (req, res) => {
 		})
 		.catch(err => {
 			res.status(500).send({ message: err.message });
+			console.log(err.message)
 		});
 };
