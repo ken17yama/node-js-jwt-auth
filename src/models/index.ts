@@ -1,6 +1,6 @@
 import { config } from "../config/db.config"
-
 import { Sequelize } from "sequelize"
+
 const sequelize = new Sequelize(
 	config.DB,
 	config.USER,
