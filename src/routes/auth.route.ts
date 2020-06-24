@@ -1,4 +1,4 @@
-import { verifySignUp } from "../middlewares";
+import { verifySignUp } from "../middlewares/verifySignUp";
 import { signup, signin } from "../controllers/auth.controller";
 
 export const authRoute = (app) => {
